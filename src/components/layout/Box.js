@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 const Box = ({
   children,
   flexDirection,
@@ -109,7 +108,7 @@ const Box = ({
     onHover
   };
   return (
-    <View
+    <div
       {...accessibilityProps}
       {...eventProps}
       {...rest}
@@ -140,7 +139,7 @@ const Box = ({
           {children}
         </Text>
       )}
-    </View>
+    </div>
   );
 };
 export default Box;
