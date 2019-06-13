@@ -1,6 +1,5 @@
 import React from "react";
-
-export default (Grid = ({
+const Grid = ({
   children,
   columns = 1,
   rows = 1,
@@ -22,4 +21,6 @@ export default (Grid = ({
   >
     {children}
   </div>
-));
+);
+
+export default Grid;

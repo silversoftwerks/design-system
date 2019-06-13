@@ -1,6 +1,6 @@
 import React from "react";
 
-export default (Column = ({ children, start, width, ...rest }) => (
+const Column = ({ children, start, width, ...rest }) => (
   <div
     style={{
       gridColumnStart: start,
@@ -10,4 +10,5 @@ export default (Column = ({ children, start, width, ...rest }) => (
   >
     {children}
   </div>
-));
+)
+export default Column
