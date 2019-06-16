@@ -9,6 +9,8 @@ const Box = ({
   justifyContent,
   alignItems,
   //
+  display = "flex",
+  //
   cursor,
   //
   backgroundColor,
@@ -16,8 +18,8 @@ const Box = ({
   border,
   borderRadius,
   //
-  width,
-  height,
+  width = "100%",
+  height = "100%",
   minWidth,
   minHeight,
   maxWidth,
@@ -74,23 +76,23 @@ const Box = ({
   const colorProps = {
     backgroundColor
   };
-  const borderProps = {
-    border,
-    borderRadius
-  };
-  const paddingProps = {
-    padding,
-    paddingTop,
-    paddingBottom,
-    paddingLeft,
-    paddingRight
-  };
+  // const borderProps = {
+  //   border,
+  //   borderRadius
+  // };
+  // const paddingProps = {
+  //   paddingTop,
+  //   paddingBottom,
+  //   paddingLeft,
+  //   paddingRight,
+  //   padding
+  // };
   const marginProps = {
-    margin,
     marginTop,
     marginBottom,
     marginLeft,
-    marginRight
+    marginRight,
+    margin
   };
   const accessibilityProps = {
     accessible,
@@ -113,6 +115,7 @@ const Box = ({
       {...eventProps}
       {...rest}
       style={{
+        display,
         cursor,
         transform,
         animation,
@@ -121,8 +124,11 @@ const Box = ({
         ...flexBoxProps,
         ...colorProps,
         ...sizeProps,
-        ...paddingProps,
-        ...marginProps
+        ...marginProps,
+        padding,
+        paddingBottom,
+        margin,
+        flex
       }}
     >
       {typeof children !== "string" ? (
@@ -130,10 +136,14 @@ const Box = ({
       ) : (
         <Text
           style={{
+            
             transform,
             animation,
             transition,
-            ...fontProps
+            ...fontProps,
+            ...borderProps,
+            // paddingProps,
+            marginProps
           }}
         >
           {children}

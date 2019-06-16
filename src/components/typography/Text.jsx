@@ -1,3 +1,6 @@
-import React from 'react'
+import React from "react";
+import fontStyles from "./fontStyles";
 
-export default Text = ({children})=><span>{children}</span>
+export default (Text = ({ children, ...rest }) => (
+  <span style={{ ...fontStyles.body, ...rest }}>{children}</span>
+));
