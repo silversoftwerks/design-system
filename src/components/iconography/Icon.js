@@ -10,6 +10,7 @@ const Icon = ({ label, ...rest }) => (
     {...fontStyles.icon}
     {...rest}
   >
+    
     {label}
   </Box>
 );
