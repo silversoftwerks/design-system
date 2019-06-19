@@ -1,11 +1,13 @@
 import React from "react";
 import fontStyles from "./fontStyles";
 import Box from "../layout/Box";
+import { colors, colorsAbstract } from "../color/colorStyles";
+
 const Header = ({
   children,
   level,
   accented,
-  accentColor = "gold",
+  accentColor = colorsAbstract.primary.yellow,
   ...rest
 }) => {
   return (

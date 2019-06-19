@@ -17,7 +17,7 @@ const palletes = {
 const colors = palletes["soft"];
 const { blue, red, yellow, white, black } = colors;
 const colorsAbstract = {
-  primary: [blue, red, yellow],
+  primary: {blue, red, yellow},
   darker: [blue, red, yellow],
   darkest: [blue, red, yellow],
   lighter: [blue, red, yellow],
