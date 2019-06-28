@@ -1,10 +1,16 @@
 import React from "react";
 
-const Column = ({ children, start = 1, width = 1, ...rest }) => (
+const Column = ({
+  children,
+  start,
+  width,
+  end = start + width || null,
+  ...rest
+}) => (
   <div
     style={{
       gridColumnStart: start,
-      gridColumnEnd: start + width,
+      gridColumnEnd: end,
       ...rest
     }}
   >
