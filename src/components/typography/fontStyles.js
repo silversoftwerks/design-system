@@ -4,14 +4,15 @@ const fontFamilies = {
   arapey: "'Arapey', serif"
 };
 const sizes = {
-  xs: { fontSize: "8px", lineHeight: "12px" },
-  sm: { fontSize: "12px", lineHeight: "16px" },
-  md: { fontSize: "16px", lineHeight: "20px" },
-  lg: { fontSize: "20px", lineHeight: "24px" },
-  xl: { fontSize: "32px", lineHeight: "44px" },
-  xxl: { fontSize: "64px", lineHeight: "72px" }
+  xs: { fontSize: "8px", lineHeight: "12px", margin: 0 },
+  sm: { fontSize: "12px", lineHeight: "16px", margin: 0 },
+  md: { fontSize: "16px", lineHeight: "20px", margin: 0 },
+  lg: { fontSize: "20px", lineHeight: "24px", margin: 0 },
+  xl: { fontSize: "32px", lineHeight: "44px", margin: 0 },
+  xxl: { fontSize: "64px", lineHeight: "72px", margin: 0 }
 };
 const fontStyles = {
+  sizes,
   icon: {
     fontFamily: fontFamilies.pioret
   },

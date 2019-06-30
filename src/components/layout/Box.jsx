@@ -8,6 +8,10 @@ const Box = ({
   flexShrink,
   justifyContent,
   alignItems,
+  backgroundImage,
+  fill = false,
+  fillHorizontal = true,
+  fillVertical = fill,
   //
   display = "flex",
   //
@@ -16,20 +20,29 @@ const Box = ({
   backgroundColor,
   //
   border,
+  borderVertical = border,
+  borderHorizontal = border,
+  borderLeft = borderHorizontal,
+  borderRight = borderHorizontal,
+  borderTop = borderVertical,
+  borderBottom = borderVertical,
   borderRadius,
   //
-  width = "100%",
-  height = "100%",
+  width = fillHorizontal ? "100%" : "unset",
+  height = fillVertical ? "100%" : "unset",
+
   minWidth,
   minHeight,
   maxWidth,
   maxHeight,
   //
   padding,
-  paddingTop,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
+  paddingVertical = padding,
+  paddingHorizontal = padding,
+  paddingTop = paddingVertical,
+  paddingBottom = paddingVertical,
+  paddingLeft = paddingHorizontal,
+  paddingRight = paddingHorizontal,
   //
   margin,
   marginTop,
@@ -115,6 +128,7 @@ const Box = ({
       {...eventProps}
       {...rest}
       style={{
+        boxSizing: "border-box",
         display,
         cursor,
         transform,
@@ -125,9 +139,17 @@ const Box = ({
         ...sizeProps,
         ...marginProps,
         border,
+        borderLeft,
+        borderRight,
+        borderTop,
+        borderBottom,
         borderRadius,
         padding,
+        paddingLeft,
+        paddingRight,
         paddingBottom,
+        paddingTop,
+        backgroundImage,
         margin,
         flex
       }}
@@ -137,13 +159,12 @@ const Box = ({
       ) : (
         <Text
           style={{
-            
             transform,
             animation,
             transition,
             ...fontProps,
             ...borderProps,
-            // paddingProps,
+            ...paddingProps,
             marginProps
           }}
         >
