@@ -4,6 +4,8 @@ const Column = ({
   children,
   start,
   width,
+  minWidth = 0,
+  overflow = "hidden",
   end = start + width || null,
   ...rest
 }) => (
@@ -11,6 +13,9 @@ const Column = ({
     style={{
       gridColumnStart: start,
       gridColumnEnd: end,
+      minWidth,
+      overflow,
+
       ...rest
     }}
   >

@@ -1,11 +1,11 @@
 import React from "react";
-import Box from "@SS/design-system/src/components/layout/Box";
-import Billboard from "@SS/design-system/src/components/typography/Billboard";
+import Box from "../../../../../apps/silver-werkstatte/src/BookingApp/PageContent/PageContentGrid/SideColumnContents/node_modules/@SS/design-system/src/components/layout/Box";
+import Billboard from "../../../../../apps/silver-werkstatte/src/BookingApp/PageBillboard/node_modules/@SS/design-system/src/components/typography/Billboard";
 
 const Icon = ({
   children,
   label,
-  color="white",
+  color={colors.white},
   height = "128px",
   width = "128px",
   accentColor = color,

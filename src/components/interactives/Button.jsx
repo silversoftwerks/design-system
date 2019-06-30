@@ -6,6 +6,8 @@ export const Button = ({
   onClick,
   border = "none",
   children,
+  fill = false,
+  width = fill ? "100%" : "unset",
   ...rest
 }) => (
   <button
@@ -19,6 +21,7 @@ export const Button = ({
       paddingLeft: "16px",
       paddingRight: "16px",
       paddingBottom: "0",
+      width,
       ...rest
     }}
     {...rest}

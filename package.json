@@ -1,6 +1,6 @@
 {
   "name": "@SS/design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Design System for Scott Silverstein Softworks",
   "main": "catalogue.js",
   "scripts": {

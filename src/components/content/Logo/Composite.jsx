@@ -1,7 +1,6 @@
 import React from "react";
-import Box from "@SS/design-system/src/components/layout/Box";
-import Billboard from "@SS/design-system/src/components/typography/Billboard";
-
+import { Billboard } from "./../Billboard";
+import Box from "./../../layout/Box";
 const Logo = ({
   children,
   label,

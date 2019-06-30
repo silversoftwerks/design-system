@@ -7,9 +7,9 @@ const sizes = {
   xs: { fontSize: "8px", lineHeight: "12px", margin: 0 },
   sm: { fontSize: "12px", lineHeight: "16px", margin: 0 },
   md: { fontSize: "16px", lineHeight: "20px", margin: 0 },
-  lg: { fontSize: "20px", lineHeight: "24px", margin: 0 },
-  xl: { fontSize: "32px", lineHeight: "44px", margin: 0 },
-  xxl: { fontSize: "64px", lineHeight: "72px", margin: 0 }
+  lg: { fontSize: "20px", lineHeight: "28px", margin: 0 },
+  xl: { fontSize: "32px", lineHeight: "40px", margin: 0 },
+  xxl: { fontSize: "64px", lineHeight: "80px", margin: 0 }
 };
 const fontStyles = {
   sizes,
