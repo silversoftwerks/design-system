@@ -1,8 +1,13 @@
 import React from "react";
-const Button = ({ label, icon, onClick, border = "none", ...rest }) => (
+export const Button = ({
+  label,
+  icon,
+  onClick,
+  border = "none",
+  children,
+  ...rest
+}) => (
   <button onClick={onClick} style={{ border, ...rest }}>
-    {icon || label}
+    {icon || label || children}
   </button>
 );
-
-export default Button;

@@ -3,7 +3,7 @@ import fontStyles from "./fontStyles";
 import Box from "../layout/Box";
 import { colors, colorsAbstract } from "../color/colorStyles";
 
-const Header = ({
+export const Header = ({
   children,
   level,
   accented,
@@ -24,4 +24,3 @@ const Header = ({
     </Box>
   );
 };
-export default Header;
