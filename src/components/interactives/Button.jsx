@@ -1,13 +1,25 @@
 import React from "react";
 import fontStyles from "../typography/fontStyles";
+import {
+  accessibilityProps,
+  eventProps,
+  animationProps,
+  colorProps,
+  sizeProps,
+  marginProps,
+  borderProps,
+  paddingProps,
+  flexboxProps,
+  backgroundProps,
+  fontProps
+} from "../propHelpers";
+
 export const Button = ({
   label,
   icon,
   onClick,
   border = "none",
   children,
-  fill = false,
-  width = fill ? "100%" : "unset",
   transition = ".2s ease",
 
   onMouseDown,
@@ -20,16 +32,18 @@ export const Button = ({
     onClick={onClick}
     style={{
       ...fontStyles.body,
+      ...rest,
       boxSizing: "border-box",
-      border,
-      minHeight: "48px",
-      paddingTop: "0",
-      paddingLeft: "16px",
-      paddingRight: "16px",
-      paddingBottom: "0",
-      transition,
-      width,
-      ...rest
+      ...borderProps({ border, ...rest }),
+      ...accessibilityProps(rest),
+      ...eventProps(rest),
+      ...flexboxProps(rest),
+      ...colorProps(rest),
+      ...sizeProps(rest),
+      ...marginProps(rest),
+      ...paddingProps(rest),
+      ...backgroundProps(rest),
+      ...animationProps({ transition, ...rest })
     }}
     {...{ onMouseDown, onMouseUp, onPointerDown, onPointerUp }}
     {...rest}
