@@ -1,24 +1,33 @@
 import React from "react";
-const Box = ({
-  children,
-  flexDirection,
-  flexWrap,
-  flex,
-  flexGrow,
-  flexShrink,
-  justifyContent,
-  alignItems,
-  backgroundImage,
+import { flexboxProps } from "./flexboxProps";
+const fontProps = ({ color, fontFamily, fontSize }) => ({
+  color,
+  fontFamily,
+  fontSize
+});
+const sizeProps = ({
   fill = false,
   fillHorizontal = true,
   fillVertical = fill,
-  //
-  display = "flex",
-  //
-  cursor,
-  //
-  backgroundColor,
-  //
+  width = fillHorizontal ? "100%" : "unset",
+  height = fillVertical ? "100%" : "unset",
+  minWidth,
+  minHeight,
+  maxWidth,
+  maxHeight
+}) => ({
+  width,
+  height,
+  minWidth,
+  minHeight,
+  maxWidth,
+  maxHeight
+});
+const colorProps = ({ color, backgroundColor }) => ({
+  color,
+  backgroundColor
+});
+const borderProps = ({
   border,
   borderVertical = border,
   borderHorizontal = border,
@@ -26,134 +35,97 @@ const Box = ({
   borderRight = borderHorizontal,
   borderTop = borderVertical,
   borderBottom = borderVertical,
-  borderRadius,
-  //
-  width = fillHorizontal ? "100%" : "unset",
-  height = fillVertical ? "100%" : "unset",
-
-  minWidth,
-  minHeight,
-  maxWidth,
-  maxHeight,
-  //
+  borderRadius
+}) => ({
+  border,
+  borderLeft,
+  borderRight,
+  borderTop,
+  borderBottom,
+  borderRadius
+});
+const paddingProps = ({
   padding,
   paddingVertical = padding,
   paddingHorizontal = padding,
   paddingTop = paddingVertical,
   paddingBottom = paddingVertical,
   paddingLeft = paddingHorizontal,
-  paddingRight = paddingHorizontal,
-  //
+  paddingRight = paddingHorizontal
+}) => ({
+  padding,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight
+});
+const marginProps = ({
   margin,
   marginTop,
   marginBottom,
   marginLeft,
-  marginRight,
-  //
+  marginRight
+}) => ({
+  margin,
+  marginTop,
+  marginBottom,
+  marginLeft,
+  marginRight
+});
+const accessibilityProps = ({ accessible, accessibilityRole, ariaLevel }) => ({
   accessible,
   accessibilityRole,
-  ariaLevel,
-  //
-  color,
-  fontFamily,
-  fontSize,
-  //
-  transform,
+  "aria-level": ariaLevel
+});
 
-  animation,
-  transition,
-  //
+const eventProps = ({ onFocus, onClick, onHover }) => ({
   onFocus,
   onClick,
-  onHover,
+  onHover
+});
+
+const animationProps = ({ transform, animation, transition = ".2s ease" }) => ({
+  transform,
+  animation,
+  transition
+});
+
+const backgroundProps = ({ backgroundImage, backgroundColor }) => ({
+  backgroundImage,
+  backgroundColor
+});
+const Box = ({
+  children,
+  //
+  display = "flex",
+  //
+  cursor,
+  //
+  boxShadow,
   measureRef,
   ...rest
 }) => {
-  const flexBoxProps = {
-    flexDirection,
-    flexWrap,
-    flex,
-    flexGrow,
-    flexShrink,
-    justifyContent,
-    alignItems
-  };
-  const sizeProps = {
-    width,
-    height,
-    minWidth,
-    minHeight,
-    maxWidth,
-    maxHeight
-  };
-
-  const colorProps = {
-    backgroundColor
-  };
-  // const borderProps = {
-  //   border,
-  //   borderRadius
-  // };
-  // const paddingProps = {
-  //   paddingTop,
-  //   paddingBottom,
-  //   paddingLeft,
-  //   paddingRight,
-  //   padding
-  // };
-  const marginProps = {
-    marginTop,
-    marginBottom,
-    marginLeft,
-    marginRight,
-    margin
-  };
-  const accessibilityProps = {
-    accessible,
-    accessibilityRole,
-    "aria-level": ariaLevel
-  };
-  const fontProps = {
-    color,
-    fontFamily,
-    fontSize
-  };
-  const eventProps = {
-    onFocus,
-    onClick,
-    onHover
-  };
   return (
     <div
-      {...accessibilityProps}
-      {...eventProps}
       {...rest}
       ref={measureRef}
       style={{
         boxSizing: "border-box",
         display,
         cursor,
-        transform,
-        animation,
-        transition,
-        ...flexBoxProps,
-        ...colorProps,
-        ...sizeProps,
-        ...marginProps,
-        border,
-        borderLeft,
-        borderRight,
-        borderTop,
-        borderBottom,
-        borderRadius,
-        padding,
-        paddingLeft,
-        paddingRight,
-        paddingBottom,
-        paddingTop,
-        backgroundImage,
-        margin,
-        flex
+
+        ...accessibilityProps(rest),
+        ...eventProps(rest),
+        ...animationProps(rest),
+        ...flexboxProps(rest),
+        ...colorProps(rest),
+        ...sizeProps(rest),
+        ...marginProps(rest),
+        ...borderProps(rest),
+        ...paddingProps(rest),
+        ...backgroundProps(rest),
+        boxShadow,
+        ...rest
       }}
     >
       {typeof children !== "string" ? (

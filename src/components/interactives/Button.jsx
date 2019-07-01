@@ -8,6 +8,12 @@ export const Button = ({
   children,
   fill = false,
   width = fill ? "100%" : "unset",
+  transition = ".2s ease",
+
+  onMouseDown,
+  onPointerDown = onMouseDown,
+  onMouseUp,
+  onPointerUp = onMouseUp,
   ...rest
 }) => (
   <button
@@ -21,9 +27,11 @@ export const Button = ({
       paddingLeft: "16px",
       paddingRight: "16px",
       paddingBottom: "0",
+      transition,
       width,
       ...rest
     }}
+    {...{ onMouseDown, onMouseUp, onPointerDown, onPointerUp }}
     {...rest}
   >
     {icon || label || children}
