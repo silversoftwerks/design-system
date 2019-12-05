@@ -1,25 +1,24 @@
 import React from "react";
+import { Box } from "../spacers/Box";
 
-const Column = ({
+export const Column = ({
   children,
-  start,
-  width,
+  start = 1,
+  width = 1,
   minWidth = 0,
   overflow = "hidden",
   end = start + width || null,
   ...rest
 }) => (
-  <div
-    style={{
+  <Box
+    {...{
       gridColumnStart: start,
       gridColumnEnd: end,
       minWidth,
       overflow,
-
       ...rest
     }}
   >
     {children}
-  </div>
+  </Box>
 );
-export default Column;

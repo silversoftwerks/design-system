@@ -1,15 +1,8 @@
 import React from "react";
-import fontStyles from "./fontStyles";
-import Box from "../layout/Box";
-import { colors, colorsAbstract } from "../color/colorStyles";
+import fontStyles from "../../../constants/font/fontStyles";
+import { Box } from "../../layout/spacers/Box";
 
-export const Header = ({
-  children,
-  level,
-  accented,
-  accentColor = colorsAbstract.primary.yellow,
-  ...rest
-}) => {
+export const Header = ({ children, level, accented, accentColor, ...rest }) => {
   return (
     <Box
       flexDirection="column"

@@ -1,15 +1,15 @@
 import React from "react";
-import fontStyles from "./fontStyles";
+import fontStyles from "../../../constants/font/fontStyles";
 
-export default (Text = ({
+export const Text = ({
   children,
   onClick,
   href,
-  tag = 'span',
+  tag = "span",
   Tag = tag,
   ...rest
 }) => (
   <Tag onClick={onClick} href={href} style={{ ...fontStyles.body, ...rest }}>
     {children}
   </Tag>
-));
+);

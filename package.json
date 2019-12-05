@@ -4,12 +4,20 @@
   "description": "Design System for Scott Silverstein Softworks",
   "main": "catalogue.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Silver Softwerks",
   "license": "ISC",
   "devDependencies": {
-    "@SS/react-ui-dev-dependencies": "git+https://github.com/silversoftwerks/react-ui-dev-dependencies.git"
+    "@SS/react-ui-dev-dependencies": "git+https://github.com/silversoftwerks/react-ui-dev-dependencies.git",
+    "@babel/core": "^7.7.4",
+    "@storybook/addon-actions": "^5.2.7",
+    "@storybook/addon-links": "^5.2.7",
+    "@storybook/addons": "^5.2.7",
+    "@storybook/react": "^5.2.7",
+    "babel-loader": "^8.0.6"
   },
   "dependencies": {
     "ink": "^2.1.1",

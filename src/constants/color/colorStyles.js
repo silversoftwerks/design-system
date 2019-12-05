@@ -1,4 +1,4 @@
-const palletes = {
+const pallets = {
   bauhaus: {
     blue: "#0095c4",
     red: "#e30515",
@@ -14,9 +14,10 @@ const palletes = {
     black: "#2E3A3B"
   }
 };
-const colors = palletes["soft"];
+const colors = pallets["soft"];
 const { blue, red, yellow, white, black } = colors;
 const colorsAbstract = {
+  storybookArea: blue,
   primary: { blue, red, yellow, white, black },
   darker: [blue, red, yellow],
   darkest: [blue, red, yellow],
@@ -24,4 +25,4 @@ const colorsAbstract = {
   lightest: [blue, red, yellow],
   greyScale: [white, black]
 };
-export { colors, colorsAbstract };
+export { colors, colorsAbstract, pallets };

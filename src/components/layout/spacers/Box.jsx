@@ -11,8 +11,10 @@ import {
   flexboxProps,
   backgroundProps,
   fontProps
-} from "../propHelpers";
-const Box = ({
+} from "../../propHelpers";
+import { Text } from "../../content/typography/Text";
+
+export const Box = ({
   children,
   //
   display = "flex",
@@ -20,18 +22,15 @@ const Box = ({
   cursor,
   //
   boxShadow,
-  measureRef,
   ...rest
 }) => {
   return (
     <div
       {...rest}
-      ref={measureRef}
       style={{
         boxSizing: "border-box",
         display,
         cursor,
-
         ...accessibilityProps(rest),
         ...eventProps(rest),
         ...animationProps(rest),
@@ -50,15 +49,17 @@ const Box = ({
         children
       ) : (
         <Text
-          style={{
-            transform,
-            animation,
-            transition,
-            ...fontProps,
-            // ...borderProps,
-            // ...paddingProps,
-            marginProps
-          }}
+          style={
+            {
+              // transform,
+              // animation,
+              // transition,
+              // ...fontProps,
+              // ...borderProps,
+              // ...paddingProps,
+              // marginProps
+            }
+          }
         >
           {children}
         </Text>
@@ -66,5 +67,3 @@ const Box = ({
     </div>
   );
 };
-
-export default Box;
