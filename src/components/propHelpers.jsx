@@ -1,7 +1,7 @@
 export const fontProps = ({ color, fontFamily, fontSize }) => ({
   color,
   fontFamily,
-  fontSize
+  fontSize,
 });
 export const sizeProps = ({
   fill = false,
@@ -12,18 +12,18 @@ export const sizeProps = ({
   minWidth,
   minHeight,
   maxWidth,
-  maxHeight
+  maxHeight,
 }) => ({
   width,
   height,
   minWidth,
   minHeight,
   maxWidth,
-  maxHeight
+  maxHeight,
 });
 export const colorProps = ({ color, backgroundColor }) => ({
   color,
-  backgroundColor
+  backgroundColor,
 });
 export const borderProps = ({
   border,
@@ -33,14 +33,20 @@ export const borderProps = ({
   borderRight = borderHorizontal,
   borderTop = borderVertical,
   borderBottom = borderVertical,
-  borderRadius
+  borderRadius,
+  borderWidth,
+  borderColor,
+  borderStyle,
 }) => ({
   border,
   borderLeft,
   borderRight,
   borderTop,
   borderBottom,
-  borderRadius
+  borderRadius,
+  borderWidth,
+  borderColor,
+  borderStyle,
 });
 export const flexboxProps = ({
   flexDirection,
@@ -49,7 +55,7 @@ export const flexboxProps = ({
   flexGrow,
   flexShrink,
   justifyContent,
-  alignItems
+  alignItems,
 }) => ({
   flexDirection,
   flexWrap,
@@ -57,7 +63,7 @@ export const flexboxProps = ({
   flexGrow,
   flexShrink,
   justifyContent,
-  alignItems
+  alignItems,
 });
 
 export const paddingProps = ({
@@ -67,51 +73,51 @@ export const paddingProps = ({
   paddingTop = paddingVertical,
   paddingBottom = paddingVertical,
   paddingLeft = paddingHorizontal,
-  paddingRight = paddingHorizontal
+  paddingRight = paddingHorizontal,
 }) => ({
   padding,
   paddingTop,
   paddingBottom,
   paddingLeft,
-  paddingRight
+  paddingRight,
 });
 export const marginProps = ({
   margin,
   marginTop,
   marginBottom,
   marginLeft,
-  marginRight
+  marginRight,
 }) => ({
   margin,
   marginTop,
   marginBottom,
   marginLeft,
-  marginRight
+  marginRight,
 });
 export const accessibilityProps = ({
   accessible,
   accessibilityRole,
-  ariaLevel
+  ariaLevel,
 }) => ({
   accessible,
   accessibilityRole,
-  "aria-level": ariaLevel
+  "aria-level": ariaLevel,
 });
 export const eventProps = ({ onFocus, onClick, onHover }) => ({
   onFocus,
   onClick,
-  onHover
+  onHover,
 });
 export const animationProps = ({
   transform,
   animation,
-  transition = ".2s ease"
+  transition = ".2s ease",
 }) => ({
   transform,
   animation,
-  transition
+  transition,
 });
 export const backgroundProps = ({ backgroundImage, backgroundColor }) => ({
   backgroundImage,
-  backgroundColor
+  backgroundColor,
 });
