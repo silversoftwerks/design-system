@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "../layout/Box";
+import { Box } from "../layout/spacers/Box";
 
 export const Billboard = ({ children, height = "unset", ...rest }) => (
   <Box
