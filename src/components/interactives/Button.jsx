@@ -1,5 +1,5 @@
 import React from "react";
-import fontStyles from "../typography/fontStyles";
+import fontStyles from "../../constants/font/fontStyles";
 import {
   accessibilityProps,
   eventProps,
@@ -11,8 +11,9 @@ import {
   paddingProps,
   flexboxProps,
   backgroundProps,
-  fontProps
+  fontProps,
 } from "../propHelpers";
+import { constants } from "buffer";
 
 export const Button = ({
   label,
@@ -43,7 +44,7 @@ export const Button = ({
       ...marginProps(rest),
       ...paddingProps(rest),
       ...backgroundProps(rest),
-      ...animationProps({ transition, ...rest })
+      ...animationProps({ transition, ...rest }),
     }}
     {...{ onMouseDown, onMouseUp, onPointerDown, onPointerUp }}
     {...rest}

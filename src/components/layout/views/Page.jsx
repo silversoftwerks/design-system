@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "../spacers/Box";
-import { useEffect, useState } from "@storybook/addons";
 
 export const Page = ({
   children,
