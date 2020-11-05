@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -38,28 +38,28 @@ module.exports = {
             [
               "@babel/preset-env",
               {
-                modules: false
-              }
+                modules: false,
+              },
             ],
-            ["@babel/preset-react"]
-          ]
+            ["@babel/preset-react"],
+          ],
         },
 
-        test: /\.jsx?$/
-      }
-    ]
+        test: /\.jsx?$/,
+      },
+    ],
   },
 
   entry: {
     catalogue: "./src/catalogue.js",
     web: "./src/web.js",
     native: "./src/native.js",
-    cli: "./src/cli.js"
+    cli: "./src/cli.js",
   },
 
   output: {
     filename: "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
   },
 
   mode: "development",
@@ -67,13 +67,13 @@ module.exports = {
     new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, "public/index.html")
-    })
+      template: path.resolve(__dirname, "public/index.html"),
+    }),
   ],
   resolve: {
     alias: {
-      "react-native$": "react-native-web"
-    }
+      "react-native$": "react-native-web",
+    },
   },
 
   optimization: {
@@ -81,14 +81,14 @@ module.exports = {
       cacheGroups: {
         vendors: {
           priority: -10,
-          test: /[\\/]node_modules[\\/]/
-        }
+          test: /[\\/]node_modules[\\/]/,
+        },
       },
 
       chunks: "async",
       minChunks: 1,
       minSize: 30000,
-      name: true
-    }
-  }
+      name: true,
+    },
+  },
 };
