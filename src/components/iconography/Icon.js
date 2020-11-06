@@ -94,6 +94,22 @@ export const Icon = ({
           fill={fill}
           style={{ width: sizeToRem, height: sizeToRem }}
         >
+          {/* <def>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0 0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </def> */}
           <path d={paths[iconLeft].path.d}></path>
         </svg>
       )}
